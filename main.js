@@ -13,7 +13,17 @@ const app = Vue.createApp({
         }
     },
     watch: {
-        number: function() {
+        number: function(value) {
+            const intValue = parseInt(value);
+
+            if (isNaN(intValue)) {
+                return
+            }
+
+            if (intValue <= 0) {
+                return
+            }
+
             this.generateRandomValues();
             this.draw();
         },
