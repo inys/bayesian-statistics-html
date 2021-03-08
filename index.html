@@ -20,9 +20,13 @@
       <div class="container">
         <div class="field">
           <label class="label">Number of samples</label>
+          {{ number }}
           <div class="control">
             <input v-model="number"
-              class="input is-small" type="text"/>
+              type="range"
+              min="20"
+              max="200"
+              class="slider"/>
           </div>
         </div>
         <div class="field">
@@ -45,7 +49,7 @@
             <input 
               v-model="range"
               type="range"
-              min="1"
+              min="0"
               :max="number"
               class="slider"
               id="myRange"/>
@@ -53,7 +57,7 @@
         </div>
       </div>
       <hr>
-      <p>RandomValues: {{ randomValues }}</p>
+      <p>Outcome: {{ randomValues }}</p>
       <hr>
       <div class="container">
         <div id="plot"></div>
