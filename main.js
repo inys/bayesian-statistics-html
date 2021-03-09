@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             number: 150,
-            range: 10,
+            range: 20,
             randomValues: [],
             realMu: 0.3,
         }
@@ -90,6 +90,16 @@ const app = Vue.createApp({
         generateRandomValues() {
             const randomArray = math.random([this.number]);
             this.randomValues = randomArray.map(el => (el < this.realMu ? 1 : 0));
+        },
+        newExperiment() {
+            this.generateRandomValues();
+            this.draw();
+        },
+        resetExperiment() {
+            this.range = 20;
+            this.realMu = 0.3;
+            this.generateRandomValues();
+            this.draw();
         }
     },
     created() {

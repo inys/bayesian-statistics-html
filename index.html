@@ -18,6 +18,12 @@
     </noscript>
     <div id="app">
       <div class="container">
+        <div class="buttons">
+          <button class="button is-info"
+            @click="newExperiment">New experiment</button>
+            <button class="button is-danger"
+            @click="resetExperiment">Reset experiment</button>
+        </div>
         <div class="field">
           <label class="label">Real μ</label>
           {{ realMu}}
