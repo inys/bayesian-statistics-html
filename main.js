@@ -58,7 +58,7 @@ const app = Vue.createApp({
                 const trace = {
                     x: xValues,
                     y: yValues,
-                    name: 'density',
+                    name: 'posterior density',
                     mode: 'lines',
                     type: 'scatter'
                 }
@@ -66,7 +66,7 @@ const app = Vue.createApp({
                 const beta_mean = {
                     x: [p/(p+q)],
                     y: [0],
-                    name: 'beta mean',
+                    name: 'posterior mean',
                     mode: 'markers',
                     type: 'scatter'
                 }
