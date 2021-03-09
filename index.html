@@ -19,17 +19,6 @@
     <div id="app">
       <div class="container">
         <div class="field">
-          <label class="label">Number of samples</label>
-          {{ number }}
-          <div class="control">
-            <input v-model="number"
-              type="range"
-              min="20"
-              max="200"
-              class="slider"/>
-          </div>
-        </div>
-        <div class="field">
           <label class="label">Real μ</label>
           {{ realMu}}
           <div class="control">
@@ -43,7 +32,7 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Range</label>
+          <label class="label">Number of samples</label>
           {{ range }}
           <div class="control">
             <input 
@@ -57,7 +46,7 @@
         </div>
       </div>
       <hr>
-      <p>Outcome: {{ randomValues }}</p>
+      <p>Outcome: {{ randomValues.slice(0,range) }}</p>
       <hr>
       <div class="container">
         <div id="plot"></div>

@@ -1,7 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
-            number: 50,
+            number: 150,
             range: 10,
             randomValues: [],
             realMu: 0.3,
