@@ -1,7 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
-            number: 150,
+            number: 200,
             range: 20,
             randomValues: [],
             realMu: 0.3,
@@ -38,7 +38,7 @@ const app = Vue.createApp({
     methods: {
         draw() {
             try {
-                const beta_mu_p_q = '(mu^(p-1))*((1-mu)^(q-1))*gamma(p+q)/(gamma(p)*gamma(q))';
+                const beta_mu_p_q = '(mu^(p-1))*((1-mu)^(q-1))*combinations(p+q,p)*p*q/(p+q)';
                 // compile the expression once
                 const expr = math.compile(beta_mu_p_q)
                 const p = 1 + this.m;
