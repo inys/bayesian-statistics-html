@@ -18,12 +18,14 @@
     </noscript>
     <div id="app">
       <div class="container">
+        <h1 class="title">Inference of the real probability by tossing a coin</h1>
         <div class="buttons">
           <button class="button is-info"
             @click="newExperiment">New experiment</button>
             <button class="button is-danger"
             @click="resetExperiment">Reset experiment</button>
         </div>
+
         <div class="field">
           <label class="label">Real μ</label>
           {{ realMu}}
@@ -37,6 +39,31 @@
               class="slider"/>
           </div>
         </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Prior: Beta distribution</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <p class="control is-expanded">
+                <input
+                  v-model="alpha"
+                  class="input"
+                  type="text">
+              </p>
+            </div>
+            <div class="field">
+              <p class="control is-expanded">
+                <input
+                  v-model="beta"
+                  class="input"
+                  type="text">
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div class="field">
           <label class="label">Number of samples</label>
           {{ range }}
@@ -50,11 +77,9 @@
               id="myRange"/>
           </div>
         </div>
-      </div>
-      <hr>
-      <p>Outcome: {{ randomValues.slice(0,range) }}</p>
-      <hr>
-      <div class="container">
+        <hr>
+        <p>Outcome: {{ randomValues.slice(0,range) }}</p>
+        <hr>
         <div id="plot"></div>
       </div>
     </div>

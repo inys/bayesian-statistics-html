@@ -5,6 +5,8 @@ const app = Vue.createApp({
             range: 20,
             randomValues: [],
             realMu: 0.3,
+            alpha: 1,
+            beta: 1,
         }
     },
     computed: {
@@ -33,6 +35,12 @@ const app = Vue.createApp({
         realMu: function() {
             this.generateRandomValues();
             this.draw();
+        },
+        alpha: function() {
+            this.draw();
+        },
+        beta: function() {
+            this.draw();
         }
     },
     methods: {
@@ -41,8 +49,8 @@ const app = Vue.createApp({
                 const beta_mu_p_q = '(mu^(p-1))*((1-mu)^(q-1))*combinations(p+q,p)*p*q/(p+q)';
                 // compile the expression once
                 const expr = math.compile(beta_mu_p_q)
-                const p = 1 + this.m;
-                const q = 1 + (this.range - this.m);
+                const p = this.alpha + this.m;
+                const q = this.beta + (this.range - this.m);
 
                 // evaluate the expression repeatedly for different values of x
                 const xValues = math.range(0, 1, 0.01).toArray()
@@ -98,6 +106,8 @@ const app = Vue.createApp({
         resetExperiment() {
             this.range = 20;
             this.realMu = 0.3;
+            this.alpha = 1;
+            this.beta = 1;
             this.generateRandomValues();
             this.draw();
         }
