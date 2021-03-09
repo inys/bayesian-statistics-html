@@ -38,7 +38,7 @@ const app = Vue.createApp({
     methods: {
         draw() {
             try {
-                const beta_mu_p_q = '(mu^(p-1))*((1-mu)^(q-1))*factorial(p+q-1)/(factorial(p-1)*factorial(q-1))';
+                const beta_mu_p_q = '(mu^(p-1))*((1-mu)^(q-1))*gamma(p+q)/(gamma(p)*gamma(q))';
                 // compile the expression once
                 const expr = math.compile(beta_mu_p_q)
                 const p = 1 + this.m;
