@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             number: 200,
-            range: 20,
+            range: 0,
             randomValues: [],
             realMu: 0.3,
             alpha: 1,
@@ -104,7 +104,7 @@ const app = Vue.createApp({
             this.draw();
         },
         resetExperiment() {
-            this.range = 20;
+            this.range = 0;
             this.realMu = 0.3;
             this.alpha = 1;
             this.beta = 1;
