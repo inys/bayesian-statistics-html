@@ -116,7 +116,16 @@ const app = Vue.createApp({
             this.beta = defaultBeta;
             this.generateRandomValues();
             this.draw();
-        }
+        },
+        incRange(step) {
+            if (this.range + step >= maxRange) {
+                this.range = maxRange;
+            } else if (this.range + step <= minRange) {
+                this.range = minRange;
+            } else {
+                this.range = this.range + step;
+            }
+        },
     },
     created() {
         this.generateRandomValues();
