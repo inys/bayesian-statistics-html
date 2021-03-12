@@ -15,11 +15,6 @@ const app = Vue.createApp({
             beta: defaultBeta,
         }
     },
-    computed: {
-        m: function() {
-            return math.sum(this.randomValues.slice(0,this.range));
-        }
-    },
     watch: {
         number: function(value) {
             const intValue = parseInt(value);
@@ -55,8 +50,9 @@ const app = Vue.createApp({
                 const beta_mu_p_q = '(mu^(p-1))*((1-mu)^(q-1))*combinations(p+q,p)*p*q/(p+q)';
                 // compile the expression once
                 const expr = math.compile(beta_mu_p_q)
-                const p = this.alpha + this.m;
-                const q = this.beta + (this.range - this.m);
+                const m = math.sum(this.randomValues.slice(0, this.range));
+                const p = parseInt(this.alpha) + m;
+                const q = parseInt(this.beta) + (this.range - m);
 
                 // evaluate the expression repeatedly for different values of x
                 const xValues = math.range(0, 1, 0.01).toArray()
