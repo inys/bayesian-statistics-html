@@ -1,12 +1,18 @@
+const minRange = 0;
+const maxRange = 200;
+const defaultMu = 0.3;
+const defaultAlpha = 1;
+const defaultBeta = 1;
+
 const app = Vue.createApp({
     data() {
         return {
-            number: 200,
-            range: 0,
+            number: maxRange,
+            range: minRange,
             randomValues: [],
-            realMu: 0.3,
-            alpha: 1,
-            beta: 1,
+            realMu: defaultMu,
+            alpha: defaultAlpha,
+            beta: defaultBeta,
         }
     },
     computed: {
@@ -104,10 +110,10 @@ const app = Vue.createApp({
             this.draw();
         },
         resetExperiment() {
-            this.range = 0;
-            this.realMu = 0.3;
-            this.alpha = 1;
-            this.beta = 1;
+            this.range = minRange;
+            this.realMu = defaultMu;
+            this.alpha = defaultAlpha;
+            this.beta = defaultBeta;
             this.generateRandomValues();
             this.draw();
         }
