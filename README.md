@@ -1,5 +1,7 @@
 # Bayesian statistics
 
+**Merged into the node.js based repository [inys/bayesian-statistics](https://github.com/inys/bayesian-statistics)!**
+
 The topic of this is the experiment of tossing an unfair coin for several times and deducing information on the real value of the parameter.
 
 - The "Real μ" describes the real probability to observe "0".
